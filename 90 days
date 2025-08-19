@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add 90 Days</title>
+    <script>
+        function add90Days() {
+            // Get the input date from the user
+            const inputDate = document.getElementById("userDate").value;
+            if (inputDate === "") {
+                alert("Please enter a valid date.");
+                return;
+            }
+            
+            const date = new Date(inputDate);
+
+            // Check for invalid date input
+            if (isNaN(date.getTime())) {
+                alert("Please enter a valid date.");
+                return;
+            }
+
+            // Add 90 days to the input date
+            date.setDate(date.getDate() + 90);
+
+            // Display the new date in a readable format
+            const newDate = date.toLocaleDateString();
+
+            document.getElementById("result").innerText = "New Date (after 90 days): " + newDate;
+        }
+    </script>
+</head>
+<body>
+
+    <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h3>Add 90 Days to a Date</h3>
+
+        <!-- Input field for the user to enter a date -->
+        <label for="userDate">Enter a date: </label>
+        <input type="date" id="userDate" required>
+        <button onclick="add90Days()" style="margin-left: 10px;">Add 90 Days</button>
+
+        <!-- Display the result here -->
+        <p id="result" style="margin-top: 15px;"></p>
+    </div>
+
+</body>
+</html>
