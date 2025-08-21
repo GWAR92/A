@@ -1,2 +1,3 @@
-name: My Site
-theme: minima
+theme: jekyll-theme-minimal
+title: 90Day Calc
+description: 90 day calc
